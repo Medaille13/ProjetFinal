@@ -1,0 +1,35 @@
+1 utilisateur
+qui repond à plusieurs questions
+un question est répondu par plusieurs utilisateurs
+la reponse est sauvegardée dans la base reponses et 
+correspond à un utilisateur et à une question
+la clé primaire est une combinaison des 2 clés étrangere provenant des tables utilisateurs et question
+
+
+
+
+chaque question correspond à un type
+A (id)
+B (id)
+C (id)
+et un type correspond à une ou plusieurs questions
+A
+B
+C
+
+
+
+
+la question à un id ( clé primaire ), et fait un type (id )> clé secondaire
+
+reflexion formulaire
+ordre des questions
+reflexion sur le type de reponse et sa sauvegarde
+
+
+-----------------------------------
+
+machine à laver whiirpool début septembre 2022 9910229549295 
+livreurs = touriste 
+oh y a une machine à reprendre putin
+retrait de l'appareil ( n'ont pas voulu le faire ) , 

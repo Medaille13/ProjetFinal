@@ -13,14 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view("Utilisateurs\Accueil");
 });
+
+Route::get('/5', function () {
+    return view("Admin\AccueilAdmin");
+});
+
+Route::get('/4', function () {
+    return view("Admin\ConnexionAdmin");
+});
+
 // User
 Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('home', 'HomeController@redirect');
