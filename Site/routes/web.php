@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
+use App\Models\AdminUser;
+use App\Models\Questions;
+use App\Models\Reponses;
+use App\Models\Type;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,19 +21,64 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-
+//page d'accueil du site
 Route::get('/', function () {
     return view("Utilisateurs\Accueil");
 });
 
-Route::get('/5', function () {
-    return view("Admin\AccueilAdmin");
-});
+//inscription partie admin
+Route::post('/admin/inscription',"App\Http\Controllers\AdminController@inscription")->name("admininscription");
 
-Route::get('/4', function () {
+Route::get('/admin/inscription', function()  {
+    return view("Admin\InscriptionAdmin");   
+    })->name("inscriptionadminpage");
+
+Route::post('/inscription', function(){        
+    request()->validate([
+        'username' => ['required','text'],
+        'password' => ['required'],
+    ]);
+    
+    $admin = new App\Models\AdminUser();
+    $admin -> username = request ('username');
+    $admin -> password = sha1(request ('password'));
+    //insert bdr
+    $admin -> save();    
+    return redirect()->route("ConnexionAdm");
+});     
+
+
+//connexion partie admin
+Route::get('/admin/connexion', function () {
     return view("Admin\ConnexionAdmin");
-});
+    })->name('ConnexionAdm');
 
+    Route::post('/admin/connexion',"App\Http\Controllers\AdminController@read")->name("adminlogin");    
+
+
+//page d'accueil partie admin
+Route::get('/admin/accueil', function () {
+    return view("Admin\AccueilAdmin");
+    })->name('AccueilAdm');
+
+//déconnexion partie admin
+Route::get('/admin/logout',"App\Http\Controllers\AdminController@logout")->name("LogoutAdm");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // User
 Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('home', 'HomeController@redirect');
@@ -50,28 +99,29 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
     Route::resource('permissions', 'PermissionsController');
-
+    
     // Roles
     Route::delete('roles/destroy', 'RolesController@massDestroy')->name('roles.massDestroy');
     Route::resource('roles', 'RolesController');
-
+    
     // Users
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
-
+    
     // Categories
     Route::delete('categories/destroy', 'CategoriesController@massDestroy')->name('categories.massDestroy');
     Route::resource('categories', 'CategoriesController');
-
+    
     // Questions
     Route::delete('questions/destroy', 'QuestionsController@massDestroy')->name('questions.massDestroy');
     Route::resource('questions', 'QuestionsController');
-
+    
     // Options
     Route::delete('options/destroy', 'OptionsController@massDestroy')->name('options.massDestroy');
     Route::resource('options', 'OptionsController');
-
+    
     // Results
     Route::delete('results/destroy', 'ResultsController@massDestroy')->name('results.massDestroy');
     Route::resource('results', 'ResultsController');
-});
+});*/
+

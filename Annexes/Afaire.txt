@@ -1,3 +1,30 @@
 rapidité page
 fonctionnel sur mobile 
 
+télécharger sous forme pdf ses réponses en option
+
+
+
+A faire plus tard
+https://laravel.com/docs/9.x/eloquent-relationships#one-to-many-inverse
+
+<?php 
+namespace App\Models;
+ 
+use Illuminate\Database\Eloquent\Model;
+ 
+class Comment extends Model
+{
+    /**
+     * Get the post that owns the comment.
+     */
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
+}
+
+
+
+donné par rémi
+https://stackoverflow.com/questions/51576692/seeding-relationship-one-to-many-in-laravel

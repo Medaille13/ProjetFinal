@@ -6,11 +6,11 @@
     </head>
     <body>
         <div id="container">
-            <!-- zone de connexion -->
+            <!-- zone d'inscription' -->
             
-            <form action={{ route("adminlogin") }} method="POST">
+            <form action={{ route("admininscription") }} method="POST">
                 {{ csrf_field() }}
-                <h1>Connexion</h1>
+                <h1>Inscription</h1>
                 
                 <label><b>Nom d'utilisateur</b></label>
                 <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>

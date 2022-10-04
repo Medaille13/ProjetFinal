@@ -17,6 +17,47 @@ class ReponsesSeeder extends Seeder
     {
         //
         $reponse = new Reponses();
+        $reponse->id = "";
+        $reponse->number = "";
+        $reponse->reponse = "";
+        $reponse->type = "B";
+        $reponse->save();
 
+        $reponse = new Reponses();
+        $reponse->id = "";
+        $reponse->number = "";
+        $reponse->reponse = "";
+        $reponse->type = "B";
+        $reponse->save();
+
+        $reponse = new Reponses();
+        $reponse->id = "";
+        $reponse->number = "";
+        $reponse->reponse = "";
+        $reponse->type = "A";
+        $reponse->save();
+
+        $reponse = new Reponses();
+        $reponse->id = "";
+        $reponse->number = "";
+        $reponse->reponse = "";
+        $reponse->type = "C";
+        $reponse->save();
+
+        $reponse = new Reponses();
+        $reponse->id = "";
+        $reponse->number = "";
+        $reponse->reponse = "";
+        $reponse->type = "B";
+        $reponse->save();
+
+        $reponse = new Reponses();
+        $reponse->id = "";
+        $reponse->number = "";
+        $reponse->reponse = "";
+        $reponse->type = "A";
+        $reponse->save();
+
+        
     }
 }

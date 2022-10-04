@@ -14,20 +14,20 @@
     </div>
 
     <div class="container-first">
-        <h1><span>Bonjour </span><span>et </span><span>bien </span><span>venue</span></h1>
+        <h1><span>Sondage </span><span>Big </span><span>Screen </span><span></span></h1>
         <div class="container-btns">
             <button class="btn-first b1">Commencer</button>
         </div>
     </div>
 
-    <img src="img/bigscreen.jpg" class="logo">
+    <a href="https://www.bigscreenvr.com/" target="blank"><img src="img/bigscreen.jpg" class="logo">
 
 
     <ul class="medias">
         <li class="bulle"><img src="img/a.png" class="logo-medias"></li>
-        <li class="bulle"><img src="ressources/insta.svg" class="logo-medias"></li>
-        <li class="bulle"><img src="ressources/yt.svg" class="logo-medias"></li>
-        <li class="bulle"><img src="ressources/fb.svg" class="logo-medias"></li>
+        <li class="bulle"><img src="img/instagram-bleu.png" class="logo-medias"></li>
+        <li class="bulle"><img src="img/youtube-bleu.png" class="logo-medias"></li>
+        <li class="bulle"><a href="https://www.facebook.com/bigscreenvr" target="blank"><img src="img/fb-bleu.svg" class="logo-medias"></li>
     </ul>
 
 
