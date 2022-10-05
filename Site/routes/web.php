@@ -26,6 +26,14 @@ Route::get('/', function () {
     return view("Utilisateurs\Accueil");
 });
 
+//page enquête
+Route::get('/formulaire', function(){
+    return view("Utilisateurs\FormulaireSatisfaction");
+})->name('FormulaireSatisfaction');
+
+//page résultat
+
+
 //inscription partie admin
 Route::post('/admin/inscription',"App\Http\Controllers\AdminController@inscription")->name("admininscription");
 
