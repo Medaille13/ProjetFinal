@@ -33,6 +33,10 @@ Route::get('/formulaire', function(){
 
 //page résultat
 
+//insertion des questions avec le controller
+Route::post('/insertquestion',"App\Http\Controllers\UserController@insertion")->name("questioninsertion");
+//lien sur le rertour
+Route::get('/fsdgl!j',"App\Http\Controllers\UserController@fin")->name("fin");
 
 //inscription partie admin
 Route::post('/admin/inscription',"App\Http\Controllers\AdminController@inscription")->name("admininscription");
@@ -68,6 +72,16 @@ Route::get('/admin/connexion', function () {
 Route::get('/admin/accueil', function () {
     return view("Admin\AccueilAdmin");
     })->name('AccueilAdm');
+
+//question admin
+Route::get('/admin/question', function () {
+    return view("Admin\QuestionAdmin");
+    })->name('QuestionAdm');
+
+//reponse admin
+Route::get('/admin/reponse', function () {
+    return view("Admin\ReponseAdmin");
+    })->name('ReponseAdm');
 
 //déconnexion partie admin
 Route::get('/admin/logout',"App\Http\Controllers\AdminController@logout")->name("LogoutAdm");

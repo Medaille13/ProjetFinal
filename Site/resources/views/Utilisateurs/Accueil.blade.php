@@ -17,6 +17,14 @@
         <h1><span>Sondage </span><span>Big </span><span>Screen </span><span></span></h1>
         <div class="container-btns">
             <button class="btn-first b1">Commencer</button>
+            <!-- <div id="trapParent"><a id="trap"
+                 href='/trap'> nothing </a></div>
+
+Puis de le retirer avec javascript:
+
+var parent = document.getElementById('trapParent');
+var child = document.getElementById('trap');
+parent.removeChild(child); -->
         </div>
     </div>
 

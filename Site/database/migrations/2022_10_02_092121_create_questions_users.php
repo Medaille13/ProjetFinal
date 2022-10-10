@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('questions_users', function (Blueprint $table) {
             $table->id();            
-            $table->integer(column:"numero_question");
-            $table->string(column:"titre_question");
-            $table->string(column:"type");
+            $table->integer("numero_question");
+            $table->string("titre_question");            
             $table->timestamps();
         });
     }
