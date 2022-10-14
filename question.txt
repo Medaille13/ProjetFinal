@@ -1,0 +1,47 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+       Schema::dropIfExists('question');
+       Schema::create('question', function (Blueprint $table) {
+            $table->id();   
+            //$table->foreignId('type_idtype');         
+            $table->string("titre");   
+            //$table->unsignedBigInteger("idtype");        
+            //$table->foreign('type_idtype')->references('idtype')->on('type'); 
+            //$table->foreignId(''type_idtype'')->constrained()->onUpdate('cascade');         
+            $table->timestamps();
+        });
+
+        Schema::table('question', function (Blueprint $table) {
+             $table->foreignId('idtype')->references('id')->on('type'); 
+             //$table->foreignId(''type_idtype'')->constrained()->onUpdate('cascade');         
+           
+
+
+        });
+
+        //--- manque liaison avec answers choice
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('questions_users');
+    }
+};

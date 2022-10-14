@@ -38,6 +38,13 @@ Route::post('/insertquestion',"App\Http\Controllers\UserController@insertion")->
 //lien sur le rertour
 Route::get('/fsdgl!j',"App\Http\Controllers\UserController@fin")->name("fin");
 
+
+//page sondage test
+Route::get('/tesst', function(){
+    return view ("Utilisateurs\Sondage");
+});
+
+
 //inscription partie admin
 Route::post('/admin/inscription',"App\Http\Controllers\AdminController@inscription")->name("admininscription");
 
